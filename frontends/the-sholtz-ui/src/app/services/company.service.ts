@@ -8,7 +8,7 @@ export class CompanyService {
 
   constructor() { }
 
-  loadCompanies() : Observable<any> {
-    return scheduled([["companies", "test", "anwser"]], asapScheduler);
+  loadCompanies() : Observable<string[]> {
+    return scheduled<string[]>([["Dipar", "Law For All", "Wyzetalk"]], asapScheduler);
   }
 }

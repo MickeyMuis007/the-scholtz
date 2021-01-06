@@ -9,6 +9,9 @@ import { AppComponent } from './app.component';
 import { companyReducer } from "@reducers/company.reducer";
 import { CompanyEffects } from './effets/companies.effects';
 
+import { AppState } from '@models/app-state';
+import { Actions } from '@actions/company.actions';
+
 @NgModule({
   declarations: [
     AppComponent
@@ -16,7 +19,7 @@ import { CompanyEffects } from './effets/companies.effects';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    StoreModule.forRoot(companyReducer),
+    StoreModule.forRoot<AppState, any>({companies: companyReducer}),
     EffectsModule.forRoot([CompanyEffects])
   ],
   providers: [],

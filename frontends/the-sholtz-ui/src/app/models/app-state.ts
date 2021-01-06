@@ -1,3 +1,3 @@
 export interface AppState {
-  companies: string[];
+  companies: { companies: string[] };
 }

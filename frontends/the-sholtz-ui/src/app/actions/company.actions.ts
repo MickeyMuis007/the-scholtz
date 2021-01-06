@@ -1,15 +1,20 @@
+import { Action } from "@ngrx/store";
+
 export const LOAD_COMPANIES = "LOAD_COMPANIES";
 export const LOAD_COMPANIES_SUCCESS = "LOAD_COMPANIES_SUCCESS";
 
-export class LoadCompaniesAction {
+export class LoadCompaniesAction implements Action {
   readonly type = LOAD_COMPANIES;
-  constructor() {}
+
+  constructor() { }
 }
 
-export class LoadCompaniesSuccessAction {
+export class LoadCompaniesSuccessAction implements Action {
   readonly type = LOAD_COMPANIES_SUCCESS;
-  constructor(public payload: string[]) { }
+  constructor(public payload: string[]) {
+  }
 }
 
-export type Action 
-  = LoadCompaniesAction | LoadCompaniesSuccessAction;
+export type Actions =
+  LoadCompaniesAction |
+  LoadCompaniesSuccessAction;

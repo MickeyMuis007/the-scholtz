@@ -3,6 +3,7 @@ import { AppState } from '@models/app-state';
 import { Store } from "@ngrx/store";
 import { Observable } from 'rxjs';
 import * as companyActions from "@actions/company.actions";
+import { CompanyService } from '@services/company.service';
 
 @Component({
   selector: 'app-root',
@@ -11,18 +12,15 @@ import * as companyActions from "@actions/company.actions";
 })
 export class AppComponent implements OnInit {
   companies$?: Observable<string[]>;
-  companies?: string[] = ['test'];
 
-  constructor(private store: Store<AppState>) { 
-    this.companies$ = this.store.select(state => state.companies);
+  constructor(private store: Store<AppState>) {
   }
 
   ngOnInit() {
-    this.companies$?.subscribe((companies) => {
-      console.log(companies)
-      this.companies = companies;
-    });
     this.getCompanies();
+    this.companies$ = this.store.select(state => {
+      return state?.companies?.companies;
+    });
   }
 
   getCompanies() {

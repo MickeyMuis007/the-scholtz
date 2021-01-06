@@ -9,7 +9,8 @@ export class CompanyEffects {
   @Effect() loadCompanies = this.actions$.pipe(
     ofType(companyActions.LOAD_COMPANIES),
     switchMap(() => this.companyService.loadCompanies().pipe(
-      map(companies => (new companyActions.LoadCompaniesSuccessAction(companies)))
+      map(companies => {
+        return new companyActions.LoadCompaniesSuccessAction(companies)})
     ))
   )
   
