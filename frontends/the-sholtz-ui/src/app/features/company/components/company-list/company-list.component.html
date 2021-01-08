@@ -1,0 +1,8 @@
+<h1>Companies</h1>
+<ul>
+  <li *ngFor="let company of companies$ | async; let i = index">{{i+1}} - {{company}}</li>
+</ul>
+<ul>
+  <li *ngFor="let company of companies; let i = index">{{i+1}} - {{company}}</li>
+</ul>
+<company-company-add [companies]="companies" (addCompanyEvent)="addCompany($event)"></company-company-add>

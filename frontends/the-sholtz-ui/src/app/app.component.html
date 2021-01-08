@@ -1,5 +1,7 @@
-<h1>Companies</h1>
-<ul>
-  <li *ngFor="let company of companies$ | async; let i = index">{{i+1}} - {{company}}</li>
-</ul>
+<nav>
+  <ul>
+    <li><a [routerLink]="['']">Home</a></li>
+    <li><a [routerLink]="['company']">Company</a></li>
+  </ul>
+</nav>
 <router-outlet></router-outlet>
