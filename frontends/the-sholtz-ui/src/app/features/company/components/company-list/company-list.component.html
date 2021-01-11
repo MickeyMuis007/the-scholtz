@@ -5,4 +5,5 @@
 <ul>
   <li *ngFor="let company of companies; let i = index">{{i+1}} - {{company}}</li>
 </ul>
-<company-company-add [companies]="companies" (addCompanyEvent)="addCompany($event)"></company-company-add>
+<div><code>{{companyObj | json}}</code></div>
+<company-company-add [companyObj]="companyObj" [companies]="companies" (addCompanyEvent)="addCompany($event)"></company-company-add>
