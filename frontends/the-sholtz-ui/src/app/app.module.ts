@@ -4,6 +4,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { StoreModule } from "@ngrx/store";
 import { EffectsModule } from "@ngrx/effects";
 import { StoreDevtoolsModule } from "@ngrx/store-devtools";
+import { CoreModule } from "./core/core.module";
 
 import { AppComponent } from './app.component';
 
@@ -18,6 +19,7 @@ import { AppState } from '@models/app-state';
   ],
   imports: [
     BrowserModule,
+    CoreModule,
     AppRoutingModule,
     StoreModule.forRoot<AppState, any>({companies: companyReducer}),
     EffectsModule.forRoot([CompanyEffects]),
