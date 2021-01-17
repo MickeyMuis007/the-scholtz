@@ -21,9 +21,9 @@
       "dom"
     ],
     "paths": {
-      "@actions/*": ["src/app/actions/*"],
-      "@reducers/*": ["src/app/reducers/*"],
-      "@effects/*": ["src/app/effects/*"],
+      "@actions/*": ["src/app/redux/actions/*"],
+      "@reducers/*": ["src/app/redux/reducers/*"],
+      "@effects/*": ["src/app/redux/effects/*"],
       "@models/*": ["src/app/models/*"],
       "@services/*": ["src/app/services/*"],
       "@company/*": ["src/app/feature/company/*"]

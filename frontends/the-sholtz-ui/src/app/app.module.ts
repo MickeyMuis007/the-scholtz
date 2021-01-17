@@ -8,7 +8,7 @@ import { StoreDevtoolsModule } from "@ngrx/store-devtools";
 import { AppComponent } from './app.component';
 
 import { companyReducer } from "@reducers/company.reducer";
-import { CompanyEffects } from './effets/companies.effects';
+import { CompanyEffects } from '@effects/companies.effects';
 
 import { AppState } from '@models/app-state';
 
